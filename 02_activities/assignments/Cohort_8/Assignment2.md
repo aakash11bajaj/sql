@@ -54,7 +54,13 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+In ERD model 1 (file: Assignment2 - Bookstore_prompt1.jpg ) - the customer address is stored as SCD type 1 - we only store the current address of the customer. If there is any change to the customer address information, the previous history of customer address is lost.
+
+In ERD model 2 (file: assignment2 - Bookstore_prompt2_prompt3.jpg) - the customer address is stored as SCD type 2 - there is an additional table - customer_address. This table can capture any change in customer address through the specification of start_date and end_date for the customer's residence at that address. 
+New rows can be entered into the table when there is a change in address for a customer
+Additionally, the current address will have end_date as NULL.
+
+SCD type 2 is better when we need to keep track of the changes in specific fields over time. This is used for data warehousing.
 ```
 
 ***
